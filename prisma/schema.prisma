@@ -24,3 +24,13 @@ model Customer {
   @@map("custumers")
 }
 
+model Product {
+  id String @id
+  name String
+  price Int
+  stock Int
+  category String
+  create_time DateTime
+
+  @@map("products")
+}
