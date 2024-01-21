@@ -25,7 +25,7 @@ describe("Prisma ORM Transaction", () => {
                     phone: "08123456800"
                 }
             })
-        ], );
+        ]);
 
         expect(customers[0].name).toBe("Liana");
         expect(customers[0].email).toBe("liana@gmail.com");
