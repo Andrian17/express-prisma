@@ -20,8 +20,9 @@ model Customer {
   name String
   email String @unique
   phone String @unique
+  wallet Wallet?
 
-  @@map("custumers")
+  @@map("customers")
 }
 
 model Product {
@@ -33,4 +34,20 @@ model Product {
   create_time DateTime
 
   @@map("products")
+}
+
+model Category {
+  id Int @id @default(autoincrement())
+  name String
+
+  @@map("categories")
+}
+
+model Wallet {
+  id String @id
+  balance Int
+  customer_id String @unique 
+  customer Customer @relation(fields: [customer_id], references: [id])
+
+  @@map("wallet")
 }
