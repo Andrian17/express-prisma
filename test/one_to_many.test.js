@@ -81,6 +81,7 @@ describe("One to many test", () => {
         });
 
         console.log(customers);
+        console.log(JSON.stringify(customers));
 
         expect(customers.length).toBeGreaterThan(2);
         expect(customers[0]).toHaveProperty("comments");
