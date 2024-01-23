@@ -64,7 +64,7 @@ describe("One to many test", () => {
     });
 
     it("find customer and comments", async () => {
-        const customer = await prismaClient.customer.findMany({
+        const customers = await prismaClient.customer.findMany({
             where: {
                 comments: {
                     some: {
@@ -80,10 +80,10 @@ describe("One to many test", () => {
             }
         });
 
-        console.log(customer);
+        console.log(customers);
 
-        expect(customer.length).toBeGreaterThan(2);
-        expect(customer[0]).toHaveProperty("comments");
-        expect(customer[0]).toHaveProperty("wallet");
+        expect(customers.length).toBeGreaterThan(2);
+        expect(customers[0]).toHaveProperty("comments");
+        expect(customers[0]).toHaveProperty("wallet");
     });
 });
