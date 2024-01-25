@@ -12,7 +12,10 @@ datasource db {
 
 model samples {
   id String @id
-  name String
+  name String @db.VarChar(100)
+  description String? @db.VarChar(100)
+  created_at DateTime? @db.DateTime()
+  @@map("samples")
 }
 
 model Customer {
